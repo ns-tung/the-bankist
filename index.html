@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/style.css" />
+    <title>The Bankist | When Banking meets Minimalist</title>
+  </head>
+  <body>
+    <header class="header border-bottom">
+      <nav class="nav">
+        <a href="/">
+          <img
+            src="/assets/img/the-bankist.svg"
+            alt="Bankist logo"
+            class="nav__logo"
+            id="logo"
+          />
+        </a>
+        <ul class="nav__links">
+          <li class="nav__item">
+            <a class="nav__link" href="#section--1">Features</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--2">Operations</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--3">Testimonials</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link btn btn-primary show-modal" href="#"
+              >Open account</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__title">
+        <div class="header__title-left">
+          <h1>
+            When
+            <span class="highlight">banking</span>
+            meets<br />
+            <span class="highlight">minimalist</span>
+          </h1>
+          <h4>A more straightforward banking experience for a simpler life.</h4>
+          <button class="btn btn--text btn--scroll-to">
+            Learn more <span class="arrow-down">&DownArrow;</span>
+          </button>
+        </div>
+        <img
+          class="header__img"
+          src="/assets/img/bankist-card.png"
+          alt="Minimalist bank items"
+        />
+      </div>
+    </header>
+
+    <section class="section border-bottom" id="section--1">
+      <div class="section__title">
+        <h2 class="section__description">Features</h2>
+        <h3 class="section__header">
+          Everything you need in a modern bank and more.
+        </h3>
+      </div>
+
+      <div class="features grid-container">
+        <div class="grid-item features__img logo lazy-img grid-item-1"></div>
+        <div class="grid-item features__feature grid-item-2">
+          <div class="features__icon">
+            <svg>
+              <use xlink:href="/assets/img/icons.svg#credit-card"></use>
+            </svg>
+          </div>
+          <h5 class="features__header color-primary">
+            Free debit card included
+          </h5>
+          <p class="color-white">
+            Unlock the full potential of your banking experience with our
+            complimentary debit card. Say goodbye to restrictive fees and hello
+            to seamless access to your funds anytime.
+          </p>
+        </div>
+        <div class="grid-item features__img card lazy-img grid-item-3"></div>
+        <div class="grid-item features__feature grid-item-4">
+          <div class="features__icon">
+            <svg>
+              <use xlink:href="/assets/img/icons.svg#dashboard-monitor"></use>
+            </svg>
+          </div>
+          <h5 class="features__header color-primary">100% digital bank</h5>
+          <p class="color-white">
+            Welcome to the future of banking with our fully digital platform.
+            Say goodbye to the hassles of traditional banking, and embrace the
+            convenience of managing finances online.
+          </p>
+        </div>
+        <div class="grid-item features__img digi lazy-img grid-item-5"></div>
+        <div class="grid-item features__feature grid-item-6">
+          <div class="features__icon">
+            <svg>
+              <use xlink:href="/assets/img/icons.svg#growth-chart"></use>
+            </svg>
+          </div>
+          <h5 class="features__header color-primary">
+            Watch your money growth
+          </h5>
+          <p class="color-white">
+            Please monitor your finances with our help as your wealth grows.
+            With our innovative investment options and personalized financial
+            advice, you can watch your money grow without worries.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section border-bottom" id="section--2">
+      <div class="section__title">
+        <h2 class="section__description">Operations</h2>
+        <h3 class="section__header">
+          Everything as simple as possible, but no simpler.
+        </h3>
+      </div>
+
+      <div class="operations">
+        <div class="operations__tab-container">
+          <button
+            class="btn btn-primary operations__tab operations__tab--1 --active"
+            data-tab="1"
+          >
+            Instant Transfers
+          </button>
+          <button
+            class="btn btn-primary operations__tab operations__tab--2"
+            data-tab="2"
+          >
+            Instant Loans
+          </button>
+          <button
+            class="btn btn-primary operations__tab operations__tab--3"
+            data-tab="3"
+          >
+            Instant Closing
+          </button>
+        </div>
+        <div
+          class="operations__content operations__content--1 operations__content--active"
+        >
+          <div class="operations__icon operations__icon--1">
+            <svg>
+              <use xlink:href="/assets/img/icons.svg#money-transfer"></use>
+            </svg>
+          </div>
+          <h5 class="operations__header">
+            Transfer money to anyone instantly! There are no fees and no BS.
+          </h5>
+          <p>
+            Say goodbye to unnecessary fees and delays when transferring money.
+            With our seamless transfer services, you can instantly send funds to
+            anyone, anywhere. Enjoy hassle-free transactions without any hidden
+            costs or fine print.
+          </p>
+        </div>
+
+        <div class="operations__content operations__content--2">
+          <div class="operations__icon operations__icon--2">
+            <svg>
+              <use xlink:href="/assets/img/icons.svg#sack-dollar"></use>
+            </svg>
+          </div>
+          <h5 class="operations__header">
+            Buy a home or make your dreams come true with instant loans.
+          </h5>
+          <p>
+            Turn your dreams into reality with our instant loan options. Whether
+            you want to purchase a home, start a business, or pursue higher
+            education, we've got you covered benefit from quick approvals and
+            competitive rates, making your aspirations within reach.
+          </p>
+        </div>
+        <div class="operations__content operations__content--3">
+          <div class="operations__icon operations__icon--3">
+            <svg>
+              <use xlink:href="/assets/img/icons.svg#delete-user"></use>
+            </svg>
+          </div>
+          <h5 class="operations__header">
+            No longer need your account? No problem! We would close it
+            instantly.
+          </h5>
+          <p>
+            Have peace of mind knowing that you can close your account
+            hassle-free whenever you need to. With our user-friendly platform,
+            closing your account is as easy as opening it. There are no hidden
+            fees or lengthy processes – just straightforward service tailored to
+            your needs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="section--3">
+      <div class="section__title section__title--testimonials">
+        <h2 class="section__description">Not sure yet?</h2>
+        <h3 class="section__header">
+          Millions of BANKIST-ers are already making their lives simpler.
+        </h3>
+      </div>
+
+      <div class="slider">
+        <div class="slide slide--1">
+          <div class="testimonial">
+            <h5 class="testimonial__header">Best financial decision ever!</h5>
+            <blockquote class="testimonial__text">
+              Switching to The Bankist was hands down the best financial
+              decision I've ever made. Their seamless digital platform, zero-fee
+              transactions, and lightning-fast customer support have transformed
+              how I manage my finances. I can't imagine banking anywhere else
+              now. Highly recommend!
+            </blockquote>
+            <address class="testimonial__author">
+              <img
+                src="/assets/img/user-1.jpg"
+                alt=""
+                class="testimonial__photo"
+              />
+              <h6 class="testimonial__name">Aram Lynn</h6>
+              <p class="testimonial__location">San Francisco, USA</p>
+            </address>
+          </div>
+        </div>
+
+        <div class="slide slide--2">
+          <div class="testimonial">
+            <h5 class="testimonial__header">
+              The last step to becoming a complete minimalist
+            </h5>
+            <blockquote class="testimonial__text">
+              Discovering The Bankist has been the final piece of my minimalist
+              lifestyle puzzle. With their streamlined digital banking
+              experience and commitment to transparency, managing my finances
+              has never been easier or more efficient. The Bankist embodies
+              simplicity and functionality, making it the perfect choice for
+              anyone seeking a minimalist approach to banking.
+            </blockquote>
+            <address class="testimonial__author">
+              <img
+                src="/assets/img/user-2.jpg"
+                alt=""
+                class="testimonial__photo"
+              />
+              <h6 class="testimonial__name">Maya Miles</h6>
+              <p class="testimonial__location">London, UK</p>
+            </address>
+          </div>
+        </div>
+
+        <div class="slide slide--3">
+          <div class="testimonial">
+            <h5 class="testimonial__header">
+              Finally free from old-school banks
+            </h5>
+            <blockquote class="testimonial__text">
+              Finally, I feel liberated from the shackles of old-school banking,
+              thanks to The Bankist. Their forward-thinking approach and modern
+              technology have revolutionized how I manage my finances: no longer
+              long queues, hidden fees, or outdated processes. With The Bankist,
+              I'm free to bank on my terms.
+            </blockquote>
+            <address class="testimonial__author">
+              <img
+                src="/assets/img/user-3.jpg"
+                alt=""
+                class="testimonial__photo"
+              />
+              <h6 class="testimonial__name">Francisco Gomel</h6>
+              <p class="testimonial__location">Lisbon, Portugal</p>
+            </address>
+          </div>
+        </div>
+        <button class="slider__btn slider__btn--left">&larr;</button>
+        <button class="slider__btn slider__btn--right">&rarr;</button>
+        <div class="dots"></div>
+      </div>
+    </section>
+
+    <section class="section bg-light section--sign-up">
+      <div class="section__title">
+        <h3 class="section__header">
+          The best day to join Bankist was one year ago. The second best is
+          today!
+        </h3>
+      </div>
+      <button class="btn btn-primary show-modal">
+        Open your free account today!
+      </button>
+    </section>
+
+    <footer class="footer">
+      <a href="/"
+        ><img
+          src="/assets/img/the-bankist-footer.svg"
+          alt="Logo"
+          class="footer__logo"
+      /></a>
+      <ul class="footer__nav">
+        <li class="footer__item">
+          <a class="footer__link" href="#">About</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Blog</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Careers</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Contact Us</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Pricing</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Privacy Policy</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Terms of Use</a>
+        </li>
+      </ul>
+    </footer>
+
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <img
+        src="/assets/img/the-bankist.svg"
+        alt="Bankist logo"
+        class="modal__logo"
+        id="logo"
+      />
+      <h2 class="modal__header">
+        Open a BANKIST's account <br />
+        in <span class="highlight">an eye blink</span>.
+      </h2>
+      <form class="modal__form">
+        <label>Display name</label>
+        <input type="text" placeholder="ex: Tung Nguyen" />
+        <label>Username</label>
+        <input type="text" placeholder="ex: tungns" />
+        <label>Password</label>
+        <input type="password" placeholder="minimum 6 numbers" min="6" />
+        <button class="btn btn-primary">Next step &rarr;</button>
+      </form>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <script src="/assets/script.js"></script>
+  </body>
+</html>
