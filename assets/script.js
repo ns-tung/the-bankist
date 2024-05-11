@@ -10,6 +10,7 @@ const btnCloseModal = document.querySelector('.close-modal');
 const btnOpenModal = document.querySelectorAll('.show-modal');
 const highlight = document.querySelectorAll('h1 span');
 const highlightModal = document.querySelector('h2 span');
+const navLinks = document.querySelector('.nav__links');
 
 const message = document.createElement('div');
 
@@ -45,19 +46,32 @@ highlight.forEach((e, i) => {
 });
 
 // Cookies Notification
+const removeMessage = function () {
+  message.style.transform = 'translateY(100px)';
+  setTimeout(() => message.remove(), 2000);
+}
 message.classList.add('message');
 message.style.backgroundColor = '#034748e6';
 message.style.backdropFilter = 'blur(.6rem)';
 message.innerHTML = `<div class='container'><div class='left'><img src='/assets/img/the-bankist-footer.svg' width='80'>We use cookies for improved functionality and analytics.</div><button class="btn btn-secondary close-message">Got it!</button></div>`;
 document.body.append(message);
 message.style.height = Number.parseInt(getComputedStyle(message).height, 10) + 40 + 'px';
-document.querySelector('.close-message').addEventListener('click', function () {
-  message.style.transform = 'translateY(100px)';
-  setTimeout(() => message.remove(), 2000);
-});
+document.querySelector('.close-message').addEventListener('click', () => removeMessage());
 setTimeout(() => message.style.transform = 'translateY(0)', 3000);
+setTimeout(() => { removeMessage() }, 9000);
 
 // Smooth Scrolling for "Learn more" button
 btnScrollTo.addEventListener('click', function () {
   sectionFeatures.scrollIntoView({ behavior: 'smooth' });
+});
+
+// Page navigation
+navLinks.addEventListener('click', function (e) {
+  e.preventDefault();
+  const target = e.target;
+  if (target.classList.value === 'nav__link') {
+    const id = target.getAttribute('href');
+    const section = document.querySelector(id);
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
 });
