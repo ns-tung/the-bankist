@@ -5,6 +5,9 @@ const overlay = document.querySelector('.overlay');
 const btnScrollTo = document.querySelector('.scroll-to');
 const sectionFeatures = document.querySelector('#features');
 const sectionOperations = document.querySelector('#operations');
+const tabs = document.querySelectorAll('.operations__tab');
+const tabsContent = document.querySelectorAll('.operations__content');
+const tabsContainer = document.querySelector('.operations__tab-container');
 const sectionTestimonials = document.querySelector('#testimonials');
 const btnCloseModal = document.querySelector('.close-modal');
 const btnOpenModal = document.querySelectorAll('.show-modal');
@@ -51,7 +54,7 @@ const removeMessage = function () {
   setTimeout(() => message.remove(), 2000);
 }
 message.classList.add('message');
-message.style.backgroundColor = '#034748e6';
+message.style.backgroundColor = 'rgba(var(--tertiary-rgb),.9)';
 message.style.backdropFilter = 'blur(.6rem)';
 message.innerHTML = `<div class='container'><div class='left'><img src='/assets/img/the-bankist-footer.svg' width='80'>We use cookies for improved functionality and analytics.</div><button class="btn btn-secondary close-message">Got it!</button></div>`;
 document.body.append(message);
@@ -74,4 +77,22 @@ navLinks.addEventListener('click', function (e) {
     const section = document.querySelector(id);
     section.scrollIntoView({ behavior: 'smooth' });
   }
+});
+
+// Operations Tab
+tabsContainer.addEventListener('click', function (e) {
+  e.preventDefault();
+  const target = e.target.closest('.operations__tab');
+
+  // Guard clause
+  if (!target) return;
+
+  tabs.forEach(tab => {
+    tab.classList.remove('--active');
+  });
+  tabsContent.forEach(content => {
+    content.classList.remove('--active');
+  });
+  target.classList.add('--active');
+  document.querySelector(`.${target.dataset.tab}`).classList.add('--active');
 });

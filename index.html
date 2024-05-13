@@ -9,7 +9,7 @@
     <title>The Bankist | When Banking meets Minimalist</title>
   </head>
   <body>
-    <header class="header border-bottom">
+    <header class="header">
       <nav class="nav">
         <a href="/">
           <img
@@ -60,7 +60,7 @@
       </div>
     </header>
 
-    <section class="section border-bottom" id="features">
+    <section class="section bg-light" id="features">
       <div class="section__title">
         <h2 class="section__description highlight">Features</h2>
         <h3 class="section__header">
@@ -118,7 +118,7 @@
       </div>
     </section>
 
-    <section class="section border-bottom" id="operations">
+    <section class="section" id="operations">
       <div class="section__title">
         <h2 class="section__description highlight">Operations</h2>
         <h3 class="section__header">
@@ -128,27 +128,18 @@
 
       <div class="operations">
         <div class="operations__tab-container">
-          <button
-            class="btn btn-primary operations__tab operations__tab--1 --active"
-            data-tab="1"
-          >
-            Instant Transfers
+          <button class="btn operations__tab --active" data-tab="transfers">
+            <span>01.</span>Instant Transfers
           </button>
-          <button
-            class="btn btn-primary operations__tab operations__tab--2"
-            data-tab="2"
-          >
-            Instant Loans
+          <button class="btn operations__tab" data-tab="loans">
+            <span>02.</span>Instant Loans
           </button>
-          <button
-            class="btn btn-primary operations__tab operations__tab--3"
-            data-tab="3"
-          >
-            Instant Closing
+          <button class="btn operations__tab" data-tab="closing">
+            <span>03.</span>Instant Closing
           </button>
         </div>
-        <div class="operations__content operations__content--1 --active">
-          <div class="operations__icon operations__icon--1">
+        <div class="operations__content transfers --active">
+          <div class="operations__icon">
             <svg>
               <use xlink:href="/assets/img/icons.svg#money-transfer"></use>
             </svg>
@@ -164,10 +155,10 @@
           </p>
         </div>
 
-        <div class="operations__content operations__content--2">
-          <div class="operations__icon operations__icon--2">
+        <div class="operations__content loans">
+          <div class="operations__icon">
             <svg>
-              <use xlink:href="/assets/img/icons.svg#sack-dollar"></use>
+              <use xlink:href="/assets/img/icons.svg#instant-loans"></use>
             </svg>
           </div>
           <h5 class="operations__header">
@@ -180,8 +171,8 @@
             competitive rates, making your aspirations within reach.
           </p>
         </div>
-        <div class="operations__content operations__content--3">
-          <div class="operations__icon operations__icon--3">
+        <div class="operations__content closing">
+          <div class="operations__icon">
             <svg>
               <use xlink:href="/assets/img/icons.svg#delete-user"></use>
             </svg>
@@ -201,7 +192,7 @@
       </div>
     </section>
 
-    <section class="section" id="testimonials">
+    <section class="section bg-light" id="testimonials">
       <div class="section__title section__title--testimonials">
         <h2 class="section__description highlight">Not sure yet?</h2>
         <h3 class="section__header">
@@ -212,14 +203,6 @@
       <div class="slider">
         <div class="slide slide--1">
           <div class="testimonial">
-            <h5 class="testimonial__header">Best financial decision ever!</h5>
-            <blockquote class="testimonial__text">
-              Switching to The Bankist was hands down the best financial
-              decision I've ever made. Their seamless digital platform, zero-fee
-              transactions, and lightning-fast customer support have transformed
-              how I manage my finances. I can't imagine banking anywhere else
-              now. Highly recommend!
-            </blockquote>
             <address class="testimonial__author">
               <img
                 src="/assets/img/user-1.jpg"
@@ -229,11 +212,28 @@
               <h6 class="testimonial__name">Aram Lynn</h6>
               <p class="testimonial__location">San Francisco, USA</p>
             </address>
+            <h5 class="testimonial__header">Best financial decision ever!</h5>
+            <blockquote class="testimonial__text">
+              Switching to The Bankist was hands down the best financial
+              decision I've ever made. Their seamless digital platform, zero-fee
+              transactions, and lightning-fast customer support have transformed
+              how I manage my finances. I can't imagine banking anywhere else
+              now. Highly recommend!
+            </blockquote>
           </div>
         </div>
 
         <div class="slide slide--2">
           <div class="testimonial">
+            <address class="testimonial__author">
+              <img
+                src="/assets/img/user-2.jpg"
+                alt=""
+                class="testimonial__photo"
+              />
+              <h6 class="testimonial__name">Maya Miles</h6>
+              <p class="testimonial__location">London, UK</p>
+            </address>
             <h5 class="testimonial__header">
               The last step to becoming a complete minimalist
             </h5>
@@ -245,20 +245,20 @@
               simplicity and functionality, making it the perfect choice for
               anyone seeking a minimalist approach to banking.
             </blockquote>
-            <address class="testimonial__author">
-              <img
-                src="/assets/img/user-2.jpg"
-                alt=""
-                class="testimonial__photo"
-              />
-              <h6 class="testimonial__name">Maya Miles</h6>
-              <p class="testimonial__location">London, UK</p>
-            </address>
           </div>
         </div>
 
         <div class="slide slide--3">
           <div class="testimonial">
+            <address class="testimonial__author">
+              <img
+                src="/assets/img/user-3.jpg"
+                alt=""
+                class="testimonial__photo"
+              />
+              <h6 class="testimonial__name">Francisco Gomel</h6>
+              <p class="testimonial__location">Lisbon, Portugal</p>
+            </address>
             <h5 class="testimonial__header">
               Finally free from old-school banks
             </h5>
@@ -269,15 +269,6 @@
               long queues, hidden fees, or outdated processes. With The Bankist,
               I'm free to bank on my terms.
             </blockquote>
-            <address class="testimonial__author">
-              <img
-                src="/assets/img/user-3.jpg"
-                alt=""
-                class="testimonial__photo"
-              />
-              <h6 class="testimonial__name">Francisco Gomel</h6>
-              <p class="testimonial__location">Lisbon, Portugal</p>
-            </address>
           </div>
         </div>
 
@@ -291,7 +282,7 @@
       </div>
     </section>
 
-    <section class="section bg-light section--sign-up">
+    <section class="section section--sign-up">
       <div class="section__title">
         <h3 class="section__header">
           The best day to join Bankist was one year ago. The second best is
