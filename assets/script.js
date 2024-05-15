@@ -13,6 +13,7 @@ const btnCloseModal = document.querySelector('.close-modal');
 const btnOpenModal = document.querySelectorAll('.show-modal');
 const highlight = document.querySelectorAll('h1 span');
 const highlightModal = document.querySelector('h2 span');
+const nav = document.querySelector('.nav');
 const navLinks = document.querySelector('.nav__links');
 
 const message = document.createElement('div');
@@ -63,6 +64,23 @@ document.querySelector('.close-message').addEventListener('click', () => removeM
 setTimeout(() => message.style.transform = 'translateY(0)', 3000);
 setTimeout(() => { removeMessage() }, 9000);
 
+// Menu dimming effect
+const handleHover = function (e) {
+  const target = e.target;
+  const navSelect = target.closest('.nav');
+  const logo = navSelect.querySelector('.nav__logo');
+  const siblings = navSelect.querySelectorAll('.nav__link');
+  if (target.classList.contains('nav__link')) {
+    siblings.forEach(el => {
+      if (el !== target) el.style.opacity = this;
+    });
+    logo.style.opacity = this;
+  }
+  target.classList.value === 'nav__logo' && siblings.forEach(el => el.style.opacity = this);
+}
+nav.addEventListener('mouseover', handleHover.bind(.5));
+nav.addEventListener('mouseout', handleHover.bind(1));
+
 // Smooth Scrolling for "Learn more" button
 btnScrollTo.addEventListener('click', function () {
   sectionFeatures.scrollIntoView({ behavior: 'smooth' });
@@ -72,7 +90,7 @@ btnScrollTo.addEventListener('click', function () {
 navLinks.addEventListener('click', function (e) {
   e.preventDefault();
   const target = e.target;
-  if (target.classList.value === 'nav__link') {
+  if (target.classList.value === 'nav__link hover-bottom') {
     const id = target.getAttribute('href');
     const section = document.querySelector(id);
     section.scrollIntoView({ behavior: 'smooth' });

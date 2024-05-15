@@ -17,11 +17,7 @@
   --tertiary-rgb: 3, 71, 82;
   --white-rgb: 255, 255, 255;
   --black-rgb: 0, 0, 0;
-  --gradient-primary: linear-gradient(
-    to top left,
-    var(--primary),
-    var(--secondary)
-  );
+  --gradient: linear-gradient(to top left, var(--primary), var(--secondary));
 
   --rounded-1_4: 1.4rem;
   --rounded-2: 2rem;
@@ -243,7 +239,8 @@ body {
 }
 
 .btn {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   font-size: 1.6rem;
   font-family: inherit;
   font-weight: 500;
@@ -265,7 +262,7 @@ body {
 .btn.btn-primary {
   position: relative;
   overflow: hidden;
-  background-image: var(--gradient-primary);
+  background-image: var(--gradient);
 }
 
 .btn.btn-primary:after {
@@ -308,22 +305,21 @@ body {
 
 .btn--text {
   color: var(--tertiary);
-  font-size: 1.7rem;
-  padding: 1rem 0;
+  padding: 0 0 0.4rem;
   background: none;
-  border-radius: 0;
+  position: relative;
   animation: float10 6s ease-in-out infinite;
 }
 
-.btn--text .arrow-down {
-  color: var(--primary);
+.btn--text svg {
+  width: 1.6rem;
+  height: 1.6rem;
+  transform: rotate(90deg);
+  fill: var(--primary);
 }
 
 .btn--text:hover {
-  border: 0;
   background: none;
-  padding: 1rem 0 0;
-  border-bottom: 0.2rem solid var(--primary);
 }
 
 p {
@@ -384,6 +380,7 @@ img {
   text-decoration: none;
   display: block;
   transition: all 0.3s;
+  position: relative;
 }
 
 .nav__link--btn:link,
@@ -451,6 +448,25 @@ h2 span {
   display: inline-block;
 }
 
+.hover-bottom::after {
+  content: '';
+  width: 0.6rem;
+  height: 0.6rem;
+  display: block;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  background-image: var(--gradient);
+  border-radius: var(--rounded-2);
+  transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.hover-bottom:hover::after {
+  width: 100%;
+  height: 0.2rem;
+  bottom: 0.2rem;
+}
+
 .highlight::after {
   display: block;
   content: '';
@@ -462,7 +478,7 @@ h2 span {
   opacity: 0.7;
   animation: widthAnimation 0.5s ease-in-out forwards;
   transform: scale(1.07, 1.05) skewX(-15deg);
-  background-image: var(--gradient-primary);
+  background-image: var(--gradient);
 }
 
 /* FEATURES */
@@ -577,7 +593,7 @@ h2 span {
 .operations__tab {
   color: var(--tertiary);
   transform: translateY(-50%);
-  background-image: var(--gradient-primary);
+  background-image: var(--gradient);
   border-radius: var(--rounded-2);
 }
 
@@ -673,13 +689,11 @@ h2 span {
   top: 50%;
   z-index: 10;
   border: none;
-  font-family: inherit;
   color: var(--tertiary);
-  background-image: var(--gradient-primary);
+  background-image: var(--gradient);
   border-radius: var(--rounded-2);
   height: 6rem;
   width: 6rem;
-  font-size: 3.25rem;
   cursor: pointer;
   transition: all ease-in-out 0.3s;
 }
@@ -688,9 +702,19 @@ h2 span {
   outline: 0.6rem solid var(--tertiary);
 }
 
+.slider__btn svg {
+  width: 3rem;
+  height: 3rem;
+  /* margin-top: 0.1rem; */
+  fill: var(--tertiary);
+}
+
 .slider__btn--left {
   left: 6%;
   transform: translate(-50%, -50%);
+  svg {
+    transform: rotate(180deg);
+  }
 }
 
 .slider__btn--right {
@@ -750,7 +774,7 @@ h2 span {
   font-size: 20rem;
   font-family: inherit;
   /* color: var(--tertiary); */
-  background: var(--gradient-primary);
+  background: var(--gradient);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -804,8 +828,9 @@ h2 span {
 
 /* SIGN-UP */
 .section--sign-up {
-  border-top: none;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   padding: 10rem 3rem;
 }
 
@@ -933,30 +958,45 @@ h2 span {
   margin-top: 1rem;
 }
 
+.modal__form button svg {
+  width: 2rem;
+  height: 2rem;
+  margin-left: 0.6rem;
+}
+
 .close-modal {
-  font-family: inherit;
+  display: flex;
   position: absolute;
   top: 3rem;
   right: 3rem;
-  font-size: 4rem;
+  align-items: center;
   width: 4rem;
   height: 4rem;
-  line-height: 4rem;
+  justify-content: center;
   border-radius: var(--rounded-circle);
   cursor: pointer;
-  color: var(--secondary);
   background: var(--tertiary);
   border: 1px solid var(--tertiary);
   box-shadow: 0 0 2rem 0.6rem rgba(var(--secondary-rgb), 0.4);
   animation: floatX 4s ease-in-out infinite;
-  transition: all ease-in-out 0.3s;
+  transition: all 0.3s ease-in-out;
+}
+
+.close-modal svg {
+  width: 3.4rem;
+  height: 3.4rem;
+  fill: var(--secondary);
+  transition: all 0.3s ease-in-out;
 }
 
 .close-modal:hover {
-  color: var(--tertiary);
   background: var(--secondary);
   border: 1px solid var(--secondary);
   box-shadow: 0 0 2rem 0.6rem rgba(var(--secondary-rgb), 0.6);
+}
+
+.close-modal:hover svg {
+  fill: var(--tertiary);
 }
 
 .hidden {

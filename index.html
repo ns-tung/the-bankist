@@ -21,13 +21,15 @@
         </a>
         <ul class="nav__links">
           <li class="nav__item">
-            <a class="nav__link" href="#features">Features</a>
+            <a class="nav__link hover-bottom" href="#features">Features</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#operations">Operations</a>
+            <a class="nav__link hover-bottom" href="#operations">Operations</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#testimonials">Testimonials</a>
+            <a class="nav__link hover-bottom" href="#testimonials"
+              >Testimonials</a
+            >
           </li>
           <li class="nav__item">
             <a
@@ -48,8 +50,11 @@
             <span>minimalist</span>
           </h1>
           <h4>A more straightforward banking experience for a simpler life.</h4>
-          <button class="btn btn--text scroll-to">
-            Learn more <span class="arrow-down">&DownArrow;</span>
+          <button class="btn btn--text hover-bottom scroll-to">
+            Learn more
+            <svg>
+              <use xlink:href="/assets/img/icons.svg#arrow"></use>
+            </svg>
           </button>
         </div>
         <img
@@ -276,8 +281,16 @@
         <div class="slide"><img src="/assets/img/img-2.jpg" alt="Photo 2" /></div>
         <div class="slide"><img src="/assets/img/img-3.jpg" alt="Photo 3" /></div>
         <div class="slide"><img src="/assets/img/img-4.jpg" alt="Photo 4" /></div> -->
-        <button class="slider__btn slider__btn--left">&larr;</button>
-        <button class="slider__btn slider__btn--right">&rarr;</button>
+        <button class="slider__btn slider__btn--left">
+          <svg>
+            <use xlink:href="/assets/img/icons.svg#arrow"></use>
+          </svg>
+        </button>
+        <button class="slider__btn slider__btn--right">
+          <svg>
+            <use xlink:href="/assets/img/icons.svg#arrow"></use>
+          </svg>
+        </button>
         <div class="dots"></div>
       </div>
     </section>
@@ -327,7 +340,11 @@
     </footer>
 
     <div class="modal hidden">
-      <button class="close-modal">&times;</button>
+      <button class="close-modal">
+        <svg>
+          <use xlink:href="/assets/img/icons.svg#cross"></use>
+        </svg>
+      </button>
       <img
         src="/assets/img/the-bankist.svg"
         alt="Bankist logo"
@@ -345,7 +362,12 @@
         <input type="text" placeholder="ex: tungns" />
         <label>Password</label>
         <input type="password" placeholder="minimum 6 numbers" min="6" />
-        <button class="btn btn-primary">Next step &rarr;</button>
+        <button class="btn btn-primary">
+          Next step
+          <svg>
+            <use xlink:href="/assets/img/icons.svg#arrow"></use>
+          </svg>
+        </button>
       </form>
     </div>
     <div class="overlay hidden"></div>
