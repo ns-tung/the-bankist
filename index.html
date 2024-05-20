@@ -11,7 +11,7 @@
   <body>
     <header class="header">
       <nav class="nav">
-        <a href="/">
+        <a class="logo" href="#">
           <img
             src="/assets/img/the-bankist.svg"
             alt="Bankist logo"
@@ -21,15 +21,13 @@
         </a>
         <ul class="nav__links">
           <li class="nav__item">
-            <a class="nav__link hover-bottom" href="#features">Features</a>
+            <a class="nav__link hover-dot" href="#features">Features</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link hover-bottom" href="#operations">Operations</a>
+            <a class="nav__link hover-dot" href="#operations">Operations</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link hover-bottom" href="#testimonials"
-              >Testimonials</a
-            >
+            <a class="nav__link hover-dot" href="#testimonials">Testimonials</a>
           </li>
           <li class="nav__item">
             <a
@@ -40,6 +38,7 @@
           </li>
         </ul>
       </nav>
+      <div class="add-sticky"></div>
 
       <div class="header__title">
         <div class="header__title-left">
@@ -50,12 +49,7 @@
             <span>minimalist</span>
           </h1>
           <h4>A more straightforward banking experience for a simpler life.</h4>
-          <button class="btn btn--text hover-bottom scroll-to">
-            Learn more
-            <svg>
-              <use xlink:href="/assets/img/icons.svg#arrow"></use>
-            </svg>
-          </button>
+          <button class="btn btn--text hover-dot scroll-to">Learn more</button>
         </div>
         <img
           class="header__img"
@@ -349,7 +343,6 @@
         src="/assets/img/the-bankist.svg"
         alt="Bankist logo"
         class="modal__logo"
-        id="logo"
       />
       <h2 class="modal__header">
         Open a BANKIST account <br />
