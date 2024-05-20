@@ -6,6 +6,7 @@ const modal = document.querySelector('.modal');
 const header = document.querySelector('.header');
 const overlay = document.querySelector('.overlay');
 const features = document.querySelector('#features');
+const sections = document.querySelectorAll('.section');
 const navLinks = document.querySelector('.nav__links');
 const addSticky = document.querySelector('.add-sticky');
 const highlight = document.querySelectorAll('h1 span');
@@ -132,14 +133,13 @@ tabsContainer.addEventListener('click', function (e) {
 
 // Sticky navigation
 const navHeight = nav.getBoundingClientRect().height;
-const rootMargin = `-${navHeight}px 0px 0px`;
+const margin = `-${navHeight}px 0px 0px`;
 
 const callback = function (entries) {
-  entries.forEach(entry => {
-    const className = entry.target.classList.value;
-    if (className === 'add-sticky') { if (!entry.isIntersecting) nav.classList.add('sticky'); else nav.classList.remove('sticky'); }
-    else if (className === 'header') { if (!entry.isIntersecting) nav.classList.add('show'); else nav.classList.remove('show'); }
-  });
+  const [entry] = entries;
+  const className = entry.target.classList.value;
+  if (className === 'add-sticky') { if (!entry.isIntersecting) nav.classList.add('sticky'); else nav.classList.remove('sticky'); }
+  else if (className === 'header') { if (!entry.isIntersecting) nav.classList.add('show'); else nav.classList.remove('show'); }
 }
 
 const observer = function (element, rootMargin = '0px', threshold = 0) {
@@ -147,4 +147,17 @@ const observer = function (element, rootMargin = '0px', threshold = 0) {
 }
 
 observer(addSticky);
-observer(header, rootMargin);
+observer(header, margin);
+
+// Revealing sections on scroll
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+  entry.target.classList.remove('--hidden');
+  observer.unobserve(entry.target);
+}
+
+sections.forEach(section => {
+  new IntersectionObserver(revealSection, { threshold: .2 }).observe(section);
+  section.classList.add('--hidden');
+});

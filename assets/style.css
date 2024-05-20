@@ -205,12 +205,15 @@ body {
 
 .section {
   padding: 15rem 3rem;
-  transition: transform 1s, opacity 1s;
 }
 
-.section--hidden {
+.section * {
+  transition: all 0.7s ease-in-out;
+}
+
+.section.--hidden * {
   opacity: 0;
-  transform: translateY(8rem);
+  transform: translateY(20%);
 }
 
 .section__title {
