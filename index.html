@@ -52,8 +52,9 @@
           <button class="btn btn--text hover-dot scroll-to">Learn more</button>
         </div>
         <img
-          class="header__img"
-          src="/assets/img/bankist-card.png"
+          class="header__img lazy-img"
+          src="/assets/img/bankist-card-lazy.png"
+          data-src="/assets/img/bankist-card.png"
           alt="Minimalist bank items"
         />
       </div>
@@ -68,8 +69,14 @@
       </div>
 
       <div class="features grid-container">
-        <div class="grid-item features__img logo lazy-img grid-item-1"></div>
-        <div class="grid-item features__feature grid-item-2">
+        <div class="grid-item features__img logo">
+          <img
+            class="features__img"
+            src="/assets/img/the-bankist-vertical.svg"
+            alt="Logo"
+          />
+        </div>
+        <div class="grid-item features__feature icon">
           <div class="features__icon">
             <svg>
               <use xlink:href="/assets/img/icons.svg#credit-card"></use>
@@ -84,8 +91,15 @@
             to seamless access to your funds anytime.
           </p>
         </div>
-        <div class="grid-item features__img card lazy-img grid-item-3"></div>
-        <div class="grid-item features__feature grid-item-4">
+        <div class="grid-item card">
+          <img
+            class="features__img lazy-img"
+            src="/assets/img/card-lazy.jpg"
+            data-src="/assets/img/card.jpg"
+            alt="Card"
+          />
+        </div>
+        <div class="grid-item features__feature icon">
           <div class="features__icon">
             <svg>
               <use xlink:href="/assets/img/icons.svg#dashboard-monitor"></use>
@@ -98,8 +112,15 @@
             convenience of managing finances online.
           </p>
         </div>
-        <div class="grid-item features__img digi lazy-img grid-item-5"></div>
-        <div class="grid-item features__feature grid-item-6">
+        <div class="grid-item digital">
+          <img
+            class="features__img lazy-img"
+            src="/assets/img/digital-lazy.jpg"
+            data-src="/assets/img/digital.jpg"
+            alt="Digital"
+          />
+        </div>
+        <div class="grid-item features__feature icon">
           <div class="features__icon">
             <svg>
               <use xlink:href="/assets/img/icons.svg#growth-chart"></use>
