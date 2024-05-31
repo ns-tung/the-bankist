@@ -2,47 +2,87 @@
 
 const nav = document.querySelector('.nav');
 const logo = document.querySelector('.logo');
-const modal = document.querySelector('.modal');
+
+const message = document.createElement('div');
 const header = document.querySelector('.header');
-const overlay = document.querySelector('.overlay');
 const features = document.querySelector('#features');
-const sections = document.querySelectorAll('.section');
 const navLinks = document.querySelector('.nav__links');
 const addSticky = document.querySelector('.add-sticky');
-const highlight = document.querySelectorAll('h1 span');
-const highlightModal = document.querySelector('h2 span');
 const btnScrollTo = document.querySelector('.scroll-to');
-const tabs = document.querySelectorAll('.operations__tab');
-const btnCloseModal = document.querySelector('.close-modal');
+
+const animatedIn = 'animate__bounce-in';
+const animatedOut = 'animate__bounce-out';
+const overlay = document.querySelector('.overlay');
+const modals = document.querySelectorAll('.modal');
+const modalLogin = document.querySelector('.login');
+const modalSignup = document.querySelector('.signup');
+const btnSwitch = document.querySelectorAll('.switch');
 const btnOpenModal = document.querySelectorAll('.show-modal');
+const btnCloseModal = document.querySelectorAll('.close-modal');
+
+const highlight = document.querySelectorAll('h1 span');
+const sections = document.querySelectorAll('.section');
+
+const tabs = document.querySelectorAll('.operations__tab');
 const tabsContent = document.querySelectorAll('.operations__content');
 const tabsContainer = document.querySelector('.operations__tab-container');
 
-const message = document.createElement('div');
+const checkModalShow = [...modals].some(el => el.classList.contains(animatedIn));
 
-// Modal
-const openModal = function (e) {
-  e.preventDefault();
-  modal.classList.remove('hidden');
+const spanHighlight = function (el, add = true) {
+  const span = el.querySelector('h2 span').classList;
+  if (add) return span.add('highlight'); else return span.remove('highlight');
+}
+
+const openModal = function (el) {
+  el.classList.add(animatedIn);
   overlay.classList.remove('hidden');
-  setTimeout(() => highlightModal.classList.add('highlight'), 100);
-};
+  setTimeout(() => spanHighlight(el), 300);
+  setTimeout(() => el.classList.add('floating'), 1000);
+}
+
+const isModalShow = function (el) {
+  return el.classList.contains(animatedIn);
+}
+
+const dimmingModal = function (el) {
+  el.classList.remove("floating");
+  el.classList.add(animatedOut);
+  setTimeout(() => {
+    spanHighlight(el, false);
+    el.classList.remove(animatedIn, animatedOut);
+  }, 1000);
+}
 
 const closeModal = function () {
-  modal.classList.add('hidden');
-  overlay.classList.add('hidden');
-  setTimeout(() => highlightModal.classList.remove('highlight'), 100);
-};
+  if (checkModalShow) return;
+  modals.forEach((el) => {
+    isModalShow(el) && dimmingModal(el);
+    setTimeout(() => overlay.classList.add('hidden'), 700);
+  });
+}
 
-btnOpenModal.forEach(btn => btn.addEventListener('click', openModal));
+const switchModal = function (e) {
+  e.preventDefault();
+  modals.forEach((el) => {
+    if (isModalShow(el)) dimmingModal(el);
+    else {
+      setTimeout(() => el.classList.add(animatedIn), 600);
+      setTimeout(() => spanHighlight(el), 700);
+      setTimeout(() => el.classList.add('floating'), 1000);
+    };
+  })
+}
 
-btnCloseModal.addEventListener('click', closeModal);
+// Handle modal
 overlay.addEventListener('click', closeModal);
-
-document.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape' && !modal.classList.contains('hidden'))
-    closeModal();
-});
+btnSwitch.forEach(btn => btn.addEventListener('click', switchModal));
+btnCloseModal.forEach(btn => btn.addEventListener('click', closeModal));
+document.addEventListener('keydown', (e) => e.key === 'Escape' && closeModal());
+btnOpenModal.forEach(btn => btn.addEventListener('click', (e) => {
+  e.preventDefault();
+  openModal(modalSignup);
+}));
 
 // Go to the top when click on the logo
 logo.addEventListener('click', function (e) {
@@ -71,6 +111,7 @@ message.style.height = Number.parseInt(getComputedStyle(message).height, 10) + 4
 document.querySelector('.close-message').addEventListener('click', () => removeMessage());
 setTimeout(() => message.style.transform = 'translateY(0)', 3000);
 setTimeout(() => { removeMessage() }, 9000);
+setTimeout(() => { if (checkModalShow) return; else openModal(modalSignup) }, 10000);
 
 const styleElement = (element, style, value) => element.style[style] = value;
 
